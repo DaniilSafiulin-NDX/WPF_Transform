@@ -1,0 +1,133 @@
+﻿<Window x:Class="WpfTransforms.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Вращение, перемещение, масштабирование - www.interestprograms.ru" Height="400" Width="600">
+    <Grid>
+        <TabControl>
+            <TabItem>
+                <TabItem.Header>
+                    UIElement
+                </TabItem.Header>
+                <Grid MouseDown="Grid_MouseDown_UIElement" Background="Transparent">
+                    <Border x:Name="borderRender" BorderThickness="2,2,2,2" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0">
+                        <Border.BorderBrush>
+                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
+                        </Border.BorderBrush>
+                        <Grid Name="gridRenderTransform" HorizontalAlignment="Left" VerticalAlignment="Center" Width="250" Height="250" RenderTransformOrigin="0.5 0.5">
+                            <Grid.Background>
+                                <SolidColorBrush Color="#FFE1E7F5"/>
+                            </Grid.Background>
+                            <TextBlock Width="240" TextWrapping="Wrap" Padding="10" TextAlignment="Justify" HorizontalAlignment="Center" Margin="0,50,0,30" Background="#FFFEFFF8" >
+                                <TextBlock.Text>
+                                    Программирование — процесс и искусство создания компьютерных программ с помощью языков программирования.
+Программирование сочетает в себе элементы искусства, науки, математики и инженерии.
+В более широком смысле, программирование — процесс создания программ, то есть разработка программного обеспечения.
+                                </TextBlock.Text>
+                            </TextBlock>
+                            <Label Content="RenderTransform" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="14" Background="{x:Null}"/>
+                        </Grid>
+                    </Border>
+
+                    <Border x:Name="borderLayout" BorderThickness="2,2,2,2" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0">
+                        <Border.BorderBrush>
+                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
+                        </Border.BorderBrush>
+                        <Grid Background="Bisque" Name="gridLayoutTransform" HorizontalAlignment="Right" VerticalAlignment="Center" Width="250" Height="250" RenderTransformOrigin="0.5 0.5" Margin="0,0,0,0">
+                            <TextBlock Width="240" TextWrapping="Wrap" Padding="10" TextAlignment="Justify" HorizontalAlignment="Center" Margin="0,50,0,30" Background="#FFFEFFF8" >
+                                <TextBlock.Text>
+                                    Программирование — процесс создания компьютерных программ.
+По выражению одного из основателей языков программирования Никлауса Вирта «Программы = алгоритмы + структуры данных».
+Программирование основывается на языках программирования, на которых пишутся исходные тексты программ.
+                                </TextBlock.Text>
+                            </TextBlock>
+                            <Label Content="LayoutTransform" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="14"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    TextEffect
+                </TabItem.Header>
+                <Grid MouseDown="Grid_MouseDown_TextEffects" Background="Transparent">
+                    <Border HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="2,2,2,2">
+                        <Border.BorderBrush>
+                            <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ActiveBorderColorKey}}"/>
+                        </Border.BorderBrush>
+                        <TextBlock x:Name="textForEffect" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <TextBlock.Background>
+                                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightColorKey}}"/>
+                            </TextBlock.Background>
+                            <TextBlock.Text>
+                                Трансформация текста
+                            </TextBlock.Text>
+                        </TextBlock>
+                    </Border>
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    Brush
+                </TabItem.Header>
+                <Grid MouseDown="Grid_MouseDown_Brush" x:Name="gridBrush">
+                    <Grid.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0" MappingMode="RelativeToBoundingBox" SpreadMethod="Reflect" >
+                            <GradientStop Color="Red"/>
+                            <GradientStop Color="Blue" Offset="1"/>
+                            <GradientStop Color="Yellow" Offset="0.4"/>
+                            <GradientStop Color="Yellow" Offset="0.6"/>
+                        </LinearGradientBrush>
+                    </Grid.Background>
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    Translate
+                </TabItem.Header>
+                <Grid Background="Transparent" MouseDown="Grid_MouseDown_Translate">
+                    <Border x:Name="border1" HorizontalAlignment="Left" VerticalAlignment="Top"
+                    Width="80" Height="80" Background="Red" Margin="10,0,0,0" CornerRadius="10" 
+                    BorderBrush="#FFB9B8B8" BorderThickness="3"/>
+
+                    <Border x:Name="border2" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                    Width="80" Height="80" Background="Yellow" Margin="100,0,0,0" CornerRadius="10" 
+                    BorderBrush="#FFB9B8B8" BorderThickness="3"/>
+
+                    <Border x:Name="border3" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                    Width="80" Height="80" Background="DarkGreen" Margin="190,0,0,0" CornerRadius="10" 
+                    BorderBrush="#FFB9B8B8" BorderThickness="3"/>
+
+                    <Border x:Name="border4" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                    Width="80" Height="80" Background="Blue" Margin="280,0,0,0" CornerRadius="10" 
+                    BorderBrush="#FFB9B8B8" BorderThickness="3"/>
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    Path
+                </TabItem.Header>
+                <Grid MouseDown="Grid_MouseDown_Path" Background="Transparent">
+                    <Path x:Name="pathRed" Fill="Red" HorizontalAlignment="Left" Margin="0,0,0,0" VerticalAlignment="Center">
+                        <Path.Data>
+                            <GeometryGroup FillRule="EvenOdd">
+                                <RectangleGeometry Rect="0,0,60,60"></RectangleGeometry>
+                                <EllipseGeometry Center="30,30" RadiusX="20" RadiusY="20" ></EllipseGeometry>
+                            </GeometryGroup>
+                        </Path.Data>
+                    </Path>
+
+                    <Path x:Name="pathBlue" Fill="Blue" HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Center">
+                        <Path.Data>
+                            <GeometryGroup>
+                                <RectangleGeometry Rect="0,0,20,20"></RectangleGeometry>
+                            </GeometryGroup>
+                        </Path.Data>
+                    </Path>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
